@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Focusmunk",
+  "description": "Blocks websites so that you can focus!",
+  "version": "0.1",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "page_action": {
+    "default_name": "Focus",
+    "default_icon": "icon.png"
+  },
+  
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+
+  "web_accessible_resources": [
+    "blocked.hmtl"
+  ]
+}
