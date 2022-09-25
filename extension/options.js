@@ -1,9 +1,10 @@
 // Saves options to chrome.storage.sync.
 function save_options() {
-  var regexes = document.getElementById('regexes').value;
-  console.log(regexes);
+  var denylist = document.getElementById('denylist').value;
+  var allowlist = document.getElementById('allowlist').value;
   chrome.storage.sync.set({
-    regexes: regexes,
+    denylist: denylist,
+    allowlist: allowlist,
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -18,9 +19,11 @@ function save_options() {
 // stored in chrome.storage.
 function restore_options() {
   chrome.storage.sync.get({
-    regexes: '',
+    denylist: '',
+    allowlist: '',
   }, function(items) {
-    document.getElementById('regexes').value = items.regexes;
+    document.getElementById('denylist').value = items.denylist;
+    document.getElementById('allowlist').value = items.allowlist;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);

@@ -10,7 +10,15 @@
     <pre>facebook.com</pre>
     <p>will likely not do what you want. Instead, try:</p>
     <pre>https://.*\.facebook\.com.*</pre>
-    <textarea rows="10" cols="50" id="regexes">
+    <textarea rows="10" cols="50" id="denylist">
+    </textarea>
+
+    <p>
+      Allowed regexes, one per line. Useful for allowing part of a website,
+      but blocking the rest. A match on the allowed regexes always lets a
+      website through, even if it matches an entry in the blocked regexes.
+    </p>
+    <textarea rows="10" cols="50" id="allowlist">
     </textarea>
 
     <button id="save">Save</button>
